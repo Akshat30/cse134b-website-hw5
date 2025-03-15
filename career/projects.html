@@ -31,6 +31,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+
+    <script src="../components/project-card.js" defer></script>
   </head>
   <script src="../theme.js" defer></script>
 
@@ -79,7 +81,23 @@
             as a software engineer.</em
           >
         </p>
+        <!--For the demo of the custom element, this information is hard coded.-->
         <div class="project-section">
+          <project-card
+            title="project 1: homespace housing platform"
+            image="../images/projects/homespace_project.png"
+            alt="Screenshot of the Homespace Housing project"
+            description="This project was developed with a few friends, and we had seeked
+              to solve the housing crisis that current college students at UCSD
+              face every year. It is a website that allows landlords in the San
+              Diego area to post listings for college students. It also has an
+              ID verification system to guarantee that only college students are
+              able to lease from this website."
+            technologies="Prisma, tRPC, MongoDB, AWS, Next.js (React)"
+            link="https://github.com/Akshat30/Homespace"
+            note="This project has been discontinued."
+          >
+          </project-card>
           <article class="project-card">
             <h3>project 1: homespace housing platform</h3>
             <p>
