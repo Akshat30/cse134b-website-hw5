@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!--main landing page, with some information about me-->
+<html lang="en">
+  <head>
+    <!-- standard meta information-->
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Akshat Jain's software engineering portfolio"
+    />
+    <meta name="keywords" content="Akshat, Jain, software, engineering" />
+    <meta name="author" content="Akshat Jain" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Akshat Jain</title>
+    <link href="../styles/main.css" rel="stylesheet" />
+    <link href="../styles/contact.css" rel="stylesheet" />
+    <!--Font Nunito Sans imported from Google Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap"
+      rel="stylesheet"
+    />
+    <!--Font Awesome for dropdown carets-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1><a href="/index.html">aj.</a></h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="#">career <i class="fa fa-caret-down"></i></a>
+            <ul>
+              <li>
+                <a href="/career/professional.html">professional</a>
+              </li>
+              <li>
+                <a href="/career/projects.html">projects</a>
+              </li>
+            </ul>
+          </li>
+          <!--this nav option was initially a dropdown, when I had more pages-->
+          <li>
+            <a href="/personal/about.html">about</a>
+          </li>
+          <li>
+            <a href="/personal/contact.html">contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>contact me!</h2>
+        <form action="https://httpbin.org/post" method="post">
+          <label for="name" class="required">name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            pattern="[A-Za-z ]+"
+            title="Letters and spaces only."
+          />
+
+          <label for="email" class="required">email</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="comments">comments</label>
+          <textarea
+            id="comments"
+            name="comments"
+            rows="3"
+            minlength="5"
+            maxlength="200"
+          ></textarea>
+
+          <input type="hidden" name="possible_bot" value="true" />
+
+          <output class="info" id="info">info:</output>
+          <output class="error" id="error">error:</output>
+
+          <button type="submit">submit</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <hr />
+      <p>
+        made with ☕️🦾 by <strong>akshat jain</strong> |
+        <a href="mailto:akshat30@gmail.com">akshat30@gmail.com</a> |
+        <a href="https://www.linkedin.com/in/akshatja1n/" target="_blank"
+          >linkedin</a
+        >
+      </p>
+      <p>&copy; 2025 akshat jain</p>
+    </footer>
+  </body>
+</html>
+<!DOCTYPE html>
+<!--main landing page, with some information about me-->
+<html lang="en">
+  <head>
+    <!-- standard meta information-->
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Akshat Jain's software engineering portfolio"
+    />
+    <meta name="keywords" content="Akshat, Jain, software, engineering" />
+    <meta name="author" content="Akshat Jain" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Akshat Jain</title>
+    <link href="../styles/main.css" rel="stylesheet" />
+    <link href="../styles/contact.css" rel="stylesheet" />
+    <!--Font Nunito Sans imported from Google Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap"
+      rel="stylesheet"
+    />
+    <!--Font Awesome for dropdown carets-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1><a href="/index.html">aj.</a></h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="#">career <i class="fa fa-caret-down"></i></a>
+            <ul>
+              <li>
+                <a href="/career/professional.html">professional</a>
+              </li>
+              <li>
+                <a href="/career/projects.html">projects</a>
+              </li>
+            </ul>
+          </li>
+          <!--this nav option was initially a dropdown, when I had more pages-->
+          <li>
+            <a href="/personal/about.html">about</a>
+          </li>
+          <li>
+            <a href="/personal/contact.html">contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>contact me!</h2>
+        <form action="https://httpbin.org/post" method="post">
+          <label for="name" class="required">name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            pattern="[A-Za-z ]+"
+            title="Letters and spaces only."
+          />
+
+          <label for="email" class="required">email</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="comments">comments</label>
+          <textarea
+            id="comments"
+            name="comments"
+            rows="3"
+            minlength="5"
+            maxlength="200"
+          ></textarea>
+
+          <input type="hidden" name="possible_bot" value="true" />
+
+          <output class="info" id="name-info">info:</output>
+          <output class="error" id="name-error">error:</output>
+
+          <button type="submit">submit</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <hr />
+      <p>
+        made with ☕️🦾 by <strong>akshat jain</strong> |
+        <a href="mailto:akshat30@gmail.com">akshat30@gmail.com</a> |
+        <a href="https://www.linkedin.com/in/akshatja1n/" target="_blank"
+          >linkedin</a
+        >
+      </p>
+      <p>&copy; 2025 akshat jain</p>
+    </footer>
+  </body>
+</html>

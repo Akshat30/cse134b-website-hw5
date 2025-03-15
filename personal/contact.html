@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<!--main landing page, with some information about me-->
+<html lang="en">
+  <head>
+    <!-- standard meta information-->
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Akshat Jain's software engineering portfolio"
+    />
+    <meta name="keywords" content="Akshat, Jain, software, engineering" />
+    <meta name="author" content="Akshat Jain" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Akshat Jain</title>
+    <link href="../styles/main.css" rel="stylesheet" />
+    <link href="../styles/contact.css" rel="stylesheet" />
+    <!--Font Nunito Sans imported from Google Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap"
+      rel="stylesheet"
+    />
+    <!--Font Awesome for dropdown carets-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <script src="../theme.js" defer></script>
+  <body>
+    <header>
+      <h1><a href="/index.html">aj.</a></h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="#">career <i class="fa fa-caret-down"></i></a>
+            <ul>
+              <li>
+                <a href="/career/professional.html">professional</a>
+              </li>
+              <li>
+                <a href="/career/projects.html">projects</a>
+              </li>
+            </ul>
+          </li>
+          <!--this nav option was initially a dropdown, when I had more pages-->
+          <li>
+            <a href="/personal/about.html">about</a>
+          </li>
+          <li>
+            <a href="/personal/contact.html">contact</a>
+          </li>
+          <li id="theme-js">
+            <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+          </li>
+          <noscript>
+            <style>
+              #theme-js {
+                display: none;
+              }
+            </style>
+          </noscript>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>contact me!</h2>
+        <form action="https://httpbin.org/post" method="post">
+          <label for="name" class="required">name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            pattern="[A-Za-z ]+"
+            title="letters and spaces only."
+          />
+
+          <label for="email" class="required">email</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="comments">comments</label>
+          <textarea
+            id="comments"
+            name="comments"
+            rows="3"
+            minlength="5"
+            maxlength="200"
+          ></textarea>
+
+          <input type="hidden" name="possible_bot" value="true" />
+          <input type="hidden" id="form-errors" name="form-errors" value="[]" />
+
+          <output class="info" id="info">200 characters remaining</output>
+          <output class="error" id="error"></output>
+
+          <button type="submit" id="submit-button">submit</button>
+        </form>
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            let formErrors = [];
+            // find all the inputs from the DOM
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const commentsInput = document.getElementById('comments');
+            const nameError = document.getElementById('error');
+            const submitButton = document.getElementById('submit-button');
+
+            // find the maximum number of chars and current number of chars
+            const infoNumOfChars = document.getElementById('info');
+            const maxNumOfChars = commentsInput.getAttribute('maxlength');
+            const formErrorsField = document.getElementById('form-errors');
+
+            // this function adds the error to the list that gets submitted
+            function addErrorToList(fieldName, message) {
+              formErrors.push({
+                fieldName,
+                message,
+              });
+              formErrorsField.value = JSON.stringify(formErrors);
+            }
+
+            // gives an error message and logs it if the user puts in a character that does not match the pattern
+            nameInput.addEventListener('input', function (event) {
+              const validPattern = /^[A-Za-z ]*$/; // my pattern
+              const inputValue = event.target.value;
+
+              if (!validPattern.test(inputValue)) {
+                event.target.value = inputValue.replace(/[^A-Za-z ]/g, ''); // disallow the weird char
+                nameError.textContent = 'only letters/space allowed for name.';
+                nameError.style.opacity = '1';
+                nameInput.classList.add('error-flash');
+
+                // add the error to the list that gets submitted
+                addErrorToList(
+                  'name',
+                  'invalid char entered in the name field'
+                );
+
+                // 3 second timer for the error message to fade away
+                setTimeout(() => {
+                  nameError.style.opacity = '0';
+                  nameInput.classList.remove('error-flash');
+                }, 3000);
+              }
+            });
+
+            // this shows the current char count to the user
+            commentsInput.addEventListener('input', function () {
+              // calculate the remaining chars left
+              let remainingChars = maxNumOfChars - commentsInput.value.length;
+              infoNumOfChars.textContent =
+                remainingChars + ' characters remaining';
+
+              // i deemed that orange is good if they only have 25% (50 chars) char count lft
+              if (remainingChars <= maxNumOfChars / 4) {
+                infoNumOfChars.classList.add('warning');
+              } else {
+                infoNumOfChars.classList.remove('warning');
+              }
+
+              // i deemed that red is good if they only have 10% (20 chars) char count left, which is like 4 words
+              if (remainingChars <= maxNumOfChars / 10) {
+                infoNumOfChars.classList.add('critical');
+                addErrorToList(
+                  'comments',
+                  'user got close to max character limit'
+                );
+              } else {
+                infoNumOfChars.classList.remove('critical');
+              }
+            });
+
+            // adding other errors that might be caught when the user tries to submit
+            submitButton.addEventListener('click', function () {
+              // this is if user tries to submit an invalid email
+              if (!emailInput.value.includes('@')) {
+                addErrorToList('email', 'invalid email format');
+              }
+              // this is if user tries to submit a very short comment
+              if (commentsInput.value.length < 5) {
+                addErrorToList('comments', 'comment is too short');
+              }
+
+              // add to the field and submit if the user submits
+              formErrorsField.value = JSON.stringify(formErrors);
+            });
+          });
+        </script>
+      </section>
+    </main>
+
+    <footer>
+      <hr />
+      <p>
+        made with ☕️🦾 by <strong>akshat jain</strong> |
+        <a href="mailto:akshat30@gmail.com">akshat30@gmail.com</a> |
+        <a href="https://www.linkedin.com/in/akshatja1n/" target="_blank"
+          >linkedin</a
+        >
+      </p>
+      <p>&copy; 2025 akshat jain</p>
+    </footer>
+  </body>
+</html>

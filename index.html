@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!--main landing page, with some information about me-->
+<html lang="en">
+  <head>
+    <!-- standard meta information-->
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Akshat Jain's software engineering portfolio"
+    />
+    <meta name="keywords" content="Akshat, Jain, software, engineering" />
+    <meta name="author" content="Akshat Jain" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Akshat Jain's Portfolio</title>
+    <link href="styles/main.css" rel="stylesheet" />
+    <link href="styles/index.css" rel="stylesheet" />
+    <!--Font Nunito Sans imported from Google Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap"
+      rel="stylesheet"
+    />
+    <!--Font Awesome for dropdown carets-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <script src="./theme.js" defer></script>
+  <body>
+    <header>
+      <h1><a href="/index.html">aj.</a></h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="#">career <i class="fa fa-caret-down"></i></a>
+            <ul>
+              <li>
+                <a href="/career/professional.html">professional</a>
+              </li>
+              <li>
+                <a href="/career/projects.html">projects</a>
+              </li>
+            </ul>
+          </li>
+          <!--this nav option was initially a dropdown, when I had more pages-->
+          <li>
+            <a href="/personal/about.html">about</a>
+          </li>
+          <li>
+            <a href="/personal/contact.html">contact</a>
+          </li>
+          <li id="theme-js">
+            <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+          </li>
+          <noscript>
+            <style>
+              #theme-js {
+                display: none;
+              }
+            </style>
+          </noscript>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="main-header">
+        <h2><strong>hey, i'm aj!</strong></h2>
+        <p>this website displays my <em>software engineering portfolio!</em></p>
+      </section>
+
+      <!--shrunk the images here using tinypng.com, resource found in class Slack-->
+      <section class="card-container">
+        <article class="main-card">
+          <div class="card-header">
+            <h3>software engineer</h3>
+            <p>bay area, ca</p>
+          </div>
+          <picture>
+            <!--phone size-->
+            <source
+              media="(max-width: 767px)"
+              srcset="./images/goldengatebridge/small.png"
+            />
+            <!--bigger than phone size-->
+            <source
+              media="(min-width: 768px)"
+              srcset="./images/goldengatebridge/large.png"
+            />
+            <!--default-->
+            <img
+              src="./images/goldengatebridge/large.png"
+              alt="Golden Gate Bridge"
+            />
+          </picture>
+          <!--source: https://unsplash.com/photos/photo-of-golden-gate-bridge-Ji_G7Bu1MoM-->
+        </article>
+
+        <article class="main-card">
+          <div class="card-header">
+            <h3>computer science</h3>
+            <p>university of california, san diego</p>
+          </div>
+          <picture>
+            <source
+              media="(max-width: 767px)"
+              srcset="./images/geisel/geisel-small.png"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="./images/geisel/geisel-large.png"
+            />
+            <img
+              src="./images/geisel/geisel-large.png"
+              alt="Geisel Library, UCSD"
+            />
+          </picture>
+          <!--source: https://today.ucsd.edu/story/uc_san_diego_named_14th_best_university_in_world_in_shanghai_jiao_tong_univ-->
+        </article>
+
+        <article class="main-card">
+          <div class="card-header">
+            <h3>ex front end dev</h3>
+            <p>center for applied internet data analysis</p>
+          </div>
+          <picture>
+            <source
+              media="(max-width: 767px)"
+              srcset="./images/caida/caida-small.png"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="./images/caida/caida-large.png"
+            />
+            <img src="./images/caida/caida-large.png" alt="CAIDA logo" />
+          </picture>
+          <!--source: https://datanexus.ucsd.edu/research-data/index.html-->
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <hr />
+      <p>
+        made with ☕️🦾 by <strong>akshat jain</strong> |
+        <a href="mailto:akshat30@gmail.com">akshat30@gmail.com</a> |
+        <a href="https://www.linkedin.com/in/akshatja1n/" target="_blank"
+          >linkedin</a
+        >
+      </p>
+      <p>&copy; 2025 akshat jain</p>
+    </footer>
+  </body>
+</html>

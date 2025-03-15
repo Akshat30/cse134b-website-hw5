@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<!--this page serves to display my most prominent projects-->
+<html lang="en">
+  <head>
+    <!-- standard meta information-->
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Akshat Jain's software engineering projects"
+    />
+    <meta
+      name="keywords"
+      content="Akshat Jain, projects, software engineering, portfolio"
+    />
+    <meta name="author" content="Akshat Jain" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Akshat Jain's Projects</title>
+    <link href="../styles/main.css" rel="stylesheet" />
+    <link href="../styles/projects.css" rel="stylesheet" />
+    <!--Font Nunito Sans imported from Google Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap"
+      rel="stylesheet"
+    />
+    <!--Font Awesome for dropdown carets-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <script src="../theme.js" defer></script>
+
+  <body>
+    <header>
+      <h1><a href="/index.html">aj.</a></h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="#">career <i class="fa fa-caret-down"></i></a>
+            <ul>
+              <li>
+                <a href="/career/professional.html">professional</a>
+              </li>
+              <li>
+                <a href="/career/projects.html">projects</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/personal/about.html">about</a>
+          </li>
+          <li>
+            <a href="/personal/contact.html">contact</a>
+          </li>
+          <li id="theme-js">
+            <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+          </li>
+          <noscript>
+            <style>
+              #theme-js {
+                display: none;
+              }
+            </style>
+          </noscript>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>my projects</h2>
+        <p>
+          <em>
+            some of my most notable projects as a computer science student and
+            as a software engineer.</em
+          >
+        </p>
+        <div class="project-section">
+          <article class="project-card">
+            <h3>project 1: homespace housing platform</h3>
+            <p>
+              This project was developed with a few friends, and we had seeked
+              to solve the housing crisis that current college students at UCSD
+              face every year. It is a website that allows landlords in the San
+              Diego area to post listings for college students. It also has an
+              ID verification system to guarantee that only college students are
+              able to lease from this website.
+            </p>
+            <p>
+              <strong>technologies used:</strong> Prisma, tRPC, MongoDB, AWS for
+              backend, and Next.js (React) for the front-end.
+            </p>
+            <p>
+              <a href="https://github.com/Akshat30/Homespace"
+                >project github.</a
+              >
+            </p>
+            <p><em>This project has been discontinued</em></p>
+          </article>
+
+          <article class="project-card">
+            <h3>project 2: pantrypal full stack application</h3>
+            <p>
+              This project was assembled as a Java app with a team of 5 using
+              Agile methologies to allow a given user to create LLM generated
+              recipes and images through voice input.
+            </p>
+            <p>
+              <strong>technologies used:</strong> MongoDB, GPT-3.5 API, Whisper
+              API, and Dall-E.
+            </p>
+            <p>
+              <a
+                href="https://github.com/ucsd-cse110-fa23/cse-110-project-team-12"
+                >project github.</a
+              >
+            </p>
+            <p><em>This website was built in CSE 110.</em></p>
+          </article>
+
+          <article class="project-card">
+            <h3>project 3: verum large language model text analysis</h3>
+            <p>
+              This project allows a given user to choose a famous political
+              speech, or input their own, and receive a detailed analysis of it.
+              This includes a general analysis, specific fact checking, an
+              unbiased summary, and more. It extracts the text from a given
+              article, uses the Google API to receive additional information,
+              summarizes the text, and uses OpenAI's LLM endpoints to receive an
+              analysis.
+            </p>
+            <p>
+              <strong>technologies used:</strong> NodeJS, Next.js, Google API,
+              OpenAI API, AWS
+            </p>
+            <p>
+              <a href="https://verum.vercel.app/">project website.</a>
+            </p>
+            <p>
+              <em
+                >this website was built as a part of a hackathon, and we won
+                second place!</em
+              >
+            </p>
+            <p>
+              here is a cool piece of code from this project:
+              <br />
+            </p>
+            <pre>
+<code>print("Enter the link to a transcript/article:")
+url = input()
+load_dotenv()
+extractor_api_key = os.getenv("EXTRACTOR_API_KEY")
+ex = Extractor(extractor_api_key)
+transcript = ex.getTranscript(url)</code>
+        </pre>
+            <p>
+              This code uses a third party extractor library to extract the text
+              from a given link article. This was the best free api we could
+              find for this hackathon project.
+            </p>
+          </article>
+          <article class="project-card">
+            <h3>project 4: spotify api playground</h3>
+            <p>
+              This project was built for fun, for me to be able to learn how to
+              use Next.js. It displays lots of information regarding my Spotify
+              profile! Or for any profile that signs in.
+            </p>
+            <p>
+              <strong>technologies used:</strong> NodeJS, Next.js, Google API,
+              OpenAI API, AWS
+            </p>
+            <p>
+              <a href="https://ajspotify.vercel.app/">project website.</a>
+            </p>
+            <p>
+              <em
+                >this project helped me get my job on campus during my third
+                year!</em
+              >
+            </p>
+            <p>iFrame Preview of the website:</p>
+            <iframe
+              src="https://ajspotify.vercel.app/"
+              width="400"
+              height="400"
+            ></iframe>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <hr />
+      <p>
+        made with ☕️🦾 by <strong>akshat jain</strong> |
+        <a href="mailto:akshat30@gmail.com">akshat30@gmail.com</a> |
+        <a href="https://www.linkedin.com/in/akshatja1n/" target="_blank"
+          >linkedin</a
+        >
+      </p>
+      <p>&copy; 2025 akshat jain</p>
+    </footer>
+  </body>
+</html>

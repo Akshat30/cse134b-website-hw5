@@ -1,0 +1,69 @@
+/* css for projects.html */
+
+.project-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  max-width: 100%;
+  width: 90%;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+.project-card {
+  background-color: var(--card-background, blue);
+  color: white;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+/* highlight a project that has an iframe preview inside it, by outlining the parent in green */
+.project-card:has(iframe) {
+  border: 0.1rem solid var(--green-accent);
+}
+
+.project-card h3 {
+  font-size: 1.5em;
+  margin-top: 0.4rem;
+  margin-bottom: 0.7rem;
+  color: var(--green-accent, yellow);
+}
+
+.project-card p {
+  font-size: 1em;
+  margin-bottom: 0.6rem;
+  color: var(--text-color, white);
+}
+
+.project-card strong {
+  color: var(--green-accent, yellow);
+}
+
+/* links to the individual projects */
+.project-card a {
+  color: var(--special-hyperlink, blue);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+/* phone */
+@media (max-width: 768px) {
+  .project-section {
+    grid-template-columns: 1fr;
+    width: 95%;
+  }
+
+  .project-card {
+    max-width: 95%;
+  }
+
+  iframe {
+    width: 250px;
+  }
+}

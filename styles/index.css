@@ -1,0 +1,75 @@
+/* css for index.html */
+
+.main-header {
+  text-align: center;
+}
+
+.main-header h2 {
+  font-size: xx-large;
+}
+
+/* set of cards describing me */
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.main-card {
+  background-color: var(--card-background, blue);
+  border-radius: 1rem;
+  overflow: hidden;
+  width: 25%;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.main-card:hover {
+  transform: translateY(-0.25rem);
+}
+
+.card-header {
+  padding: 1.25rem;
+}
+
+.card-header h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--text-color, white);
+}
+
+.card-header p {
+  font-size: 1em;
+  color: var(--text-color, white);
+}
+
+.main-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* phone */
+@media (max-width: 767px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-card {
+    width: 90%;
+  }
+}
+
+/* ipad */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .card-container {
+    justify-content: space-around;
+  }
+
+  .main-card {
+    width: 45%;
+  }
+}

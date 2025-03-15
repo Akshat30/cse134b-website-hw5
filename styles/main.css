@@ -1,0 +1,204 @@
+/* css for all files */
+
+:root {
+  /* my defined colors: */
+  --primary-color: #132237;
+  --background-color: #0f0f17;
+  --text-color: #c3c7e4;
+  --white-color: #e5e5f7;
+  --hover-color: #2a3059;
+  --dropdown-bg: #161a2f;
+  --dropdown-hover: #272c4a;
+  --card-background: #132237;
+
+  /* using color() and color-mix() for some more vibrant colors */
+  --green-accent: color(srgb 0.5 0.7 0);
+  --special-hyperlink: color-mix(in srgb, cyan 60%, white 40%);
+}
+
+.light-mode {
+  --primary-color: #e0e0e0;
+  --background-color: #f8f9fa;
+  --text-color: #222;
+  --white-color: #000;
+  --hover-color: #dcdcdc;
+  --dropdown-bg: #e0e0e0;
+  --dropdown-hover: #9f9f9f;
+  --card-background: #c9fdf0;
+  --green-accent: color(srgb 0 0.5 0.7);
+  --special-hyperlink: color-mix(in srgb, blue 60%, white 40%);
+}
+
+#theme-toggle {
+  background: var(--primary-color, blue);
+  cursor: pointer;
+  border: none;
+  border-radius: 0.25rem;
+  display: block;
+  padding: 1rem 1.25rem;
+}
+
+@media (max-width: 767px) {
+  #theme-toggle {
+    padding: 0.5rem 0.75rem;
+    font-size: small;
+  }
+}
+
+/* body, resetting margin, padding and setting colors/structure */
+body {
+  font-family: 'Nunito Sans', sans-serif; /* imported from google fonts */
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color, black);
+  color: var(--text-color, white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* header content */
+header {
+  width: 100%;
+  background-color: var(--background-color, black);
+  color: var(--white-color, white);
+  padding: 1.25rem 2.5rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* special animation that rotates the text aj. in the navbar */
+@keyframes rotate-header-aj {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+header h1 a {
+  font-family: 'Rouge Script', serif; /* imported from google fonts, only for the text aj.*/
+  text-decoration: none;
+  font-size: 2em;
+  color: var(--white-color, white);
+  display: inline-block;
+}
+
+/* rotates the text aj. if it is hovered over */
+header h1 a:hover {
+  animation: rotate-header-aj 2s linear infinite;
+}
+
+/* nav, as a part of the header */
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+/* list of dropdown/link */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1.25rem;
+}
+
+nav ul li {
+  position: relative;
+  display: inline-block;
+}
+
+/* give it a button appearance */
+nav ul li a {
+  display: block;
+  padding: 1rem 1.25rem;
+  text-decoration: none;
+  font-size: large;
+  background: var(--primary-color, blue);
+  color: var(--white-color, white);
+  border-radius: 0.25rem;
+  transition: background 0.5s ease;
+}
+
+@media (max-width: 767px) {
+  nav ul li a {
+    padding: 0.5rem 0.75rem;
+    font-size: small;
+  }
+}
+
+nav ul li a:hover {
+  background: var(--hover-color);
+}
+
+nav ul li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 2px;
+  background: var(--dropdown-bg, blue);
+  list-style: none;
+  padding: 0;
+  border-radius: 0.25rem;
+}
+
+nav ul li:hover ul {
+  display: block;
+}
+
+nav ul li ul li a {
+  display: block;
+  padding: 0.5rem 1.25rem;
+  color: var(--text-color, white);
+  background: var(--dropdown-bg, blue);
+  width: 7rem;
+}
+
+nav ul li ul li a:hover {
+  background: var(--dropdown-hover, blue);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
+}
+
+section {
+  padding: 0 2.5rem;
+  border-radius: 0.5rem;
+}
+
+/* standard heading sizes looked small on the website/mobile */
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+footer {
+  width: 90%;
+  height: 10dvh;
+  background: var(--background-color, black);
+  color: var(--white-color, white);
+  text-align: center;
+  padding: 0.75rem 0.75rem;
+  margin: 2.5rem 0;
+}
+
+footer hr {
+  width: 90%;
+  border-color: var(--background-color);
+}
+
+footer a {
+  color: var(--white-color, white);
+}

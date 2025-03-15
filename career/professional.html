@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--this page serves to display my professional life: my education and work experience-->
+<html lang="en">
+  <head>
+    <!-- standard meta information-->
+    <meta charset="utf-8" />
+    <meta name="description" content="Akshat Jain's Professional Experience" />
+    <meta name="keywords" content="Akshat Jain, software, engineering" />
+    <meta name="author" content="Akshat Jain" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional Experience</title>
+    <link href="../styles/main.css" rel="stylesheet" />
+    <link href="../styles/professional.css" rel="stylesheet" />
+    <!--Font Nunito Sans imported from Google Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap"
+      rel="stylesheet"
+    />
+    <!--Font Awesome for dropdown carets-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <script src="../theme.js" defer></script>
+
+  <body>
+    <header>
+      <h1><a href="/index.html">aj.</a></h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="#">career <i class="fa fa-caret-down"></i></a>
+            <ul>
+              <li>
+                <a href="/career/professional.html">professional</a>
+              </li>
+              <li>
+                <a href="/career/projects.html">projects</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/personal/about.html">about</a>
+          </li>
+          <li>
+            <a href="/personal/contact.html">contact</a>
+          </li>
+          <li id="theme-js">
+            <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+          </li>
+          <noscript>
+            <style>
+              #theme-js {
+                display: none;
+              }
+            </style>
+          </noscript>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>professional</h2>
+        <p>my education and work experience</p>
+      </section>
+      <section>
+        <h3>education</h3>
+        <article class="prof-entry">
+          <hgroup class="prof-header">
+            <h4><strong>university of california, san diego</strong></h4>
+            <p><strong>09/2021 – 06/2025</strong></p>
+          </hgroup>
+          <div class="prof-header">
+            <p><em>b.s. computer science</em></p>
+            <p><em>san diego, ca</em></p>
+          </div>
+          <ul>
+            <li>
+              relevant courses: object oriented programming, comp. programming,
+              swe tools, discrete math, linear algebra, multivariable calculus,
+              c/assembly, statistics, adv. data structures, computation theory,
+              software engineering, algorithm design
+            </li>
+            <li>activities: triton consulting group, alpha kappa psi</li>
+          </ul>
+        </article>
+      </section>
+
+      <section>
+        <h3>work experience</h3>
+        <article class="prof-entry">
+          <hgroup class="prof-header">
+            <h4><strong>software engineer intern</strong></h4>
+            <p><strong>06/2024 – 09/2024</strong></p>
+          </hgroup>
+          <div class="prof-header">
+            <p><em>microsoft</em></p>
+            <p><em>redmond, wa</em></p>
+          </div>
+          <ul>
+            <li>
+              designed a large-scale error metrics tracker to catch and report
+              errors occurring in software powering a wan
+            </li>
+            <li>
+              architectured backend library that works with network providers,
+              and can be easily injected for immediate use
+            </li>
+            <li>
+              developed frontend dashboard to allow easy consumption of the
+              error metrics data, with many different views and external
+              connections
+            </li>
+          </ul>
+        </article>
+        <article class="prof-entry">
+          <hgroup class="prof-header">
+            <h4><strong>front end developer</strong></h4>
+            <p><strong>10/2023 - 06/2024</strong></p>
+          </hgroup>
+          <div class="prof-header">
+            <p><em>center for applied internet data analysis</em></p>
+            <p><em>san diego, ca (remote)</em></p>
+          </div>
+          <ul>
+            <li>
+              constructed front-end solutions for research institute with 50+
+              pages, using React, Javascript, SASS, PHP, to enhance UX
+            </li>
+          </ul>
+        </article>
+        <article class="prof-entry">
+          <hgroup class="prof-header">
+            <h4><strong>software engineer intern</strong></h4>
+            <p><strong>07/2023 – 09/2023</strong></p>
+          </hgroup>
+          <div class="prof-header">
+            <p><em>glean</em></p>
+            <p><em>palo alto, ca (remote)</em></p>
+          </div>
+          <ul>
+            <li>
+              co-managed team of 5 interns, prioritizing best code practices,
+              efficiency, and aided interns in debugging/troubleshooting
+            </li>
+            <li>
+              streamlined development for interns by establishing software
+              architecture for ChatGPT plugin that accesses 4 workspaces
+            </li>
+            <li>
+              directed python to process 10+ queries from GPT-4, determine the
+              API call for Slack, and parse relevant data for GPT
+            </li>
+            <li>
+              enhanced relevance of ChatGPT queries by adjusting GPT-4 model
+              with 20+ instructions, dictated behavior for prompts
+            </li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <hr />
+      <p>
+        made with ☕️🦾 by <strong>akshat jain</strong> |
+        <a href="mailto:akshat30@gmail.com">akshat30@gmail.com</a> |
+        <a href="https://www.linkedin.com/in/akshatja1n/" target="_blank"
+          >linkedin</a
+        >
+      </p>
+      <p>&copy; 2025 akshat jain</p>
+    </footer>
+  </body>
+</html>

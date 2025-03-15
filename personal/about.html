@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--about page with my personal bio and photo-->
+<html lang="en">
+  <head>
+    <!-- standard meta information-->
+    <meta charset="utf-8" />
+    <meta name="description" content="Akshat Jain's About Me Page" />
+    <meta name="keywords" content="Akshat Jain, software, engineering" />
+    <meta name="author" content="Akshat Jain" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Akshat Jain</title>
+    <link href="../styles/main.css" rel="stylesheet" />
+    <link href="../styles/about.css" rel="stylesheet" />
+    <!--Font Nunito Sans imported from Google Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap"
+      rel="stylesheet"
+    />
+    <!--Font Awesome for dropdown carets-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <script src="../theme.js" defer></script>
+  <body>
+    <header>
+      <h1><a href="/index.html">aj.</a></h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="#">career <i class="fa fa-caret-down"></i></a>
+            <ul>
+              <li>
+                <a href="/career/professional.html">professional</a>
+              </li>
+              <li>
+                <a href="/career/projects.html">projects</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/personal/about.html">about</a>
+          </li>
+          <li>
+            <a href="/personal/contact.html">contact</a>
+          </li>
+          <li id="theme-js">
+            <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+          </li>
+          <noscript>
+            <style>
+              #theme-js {
+                display: none;
+              }
+            </style>
+          </noscript>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="about-section">
+        <div class="about-text">
+          <h2>about me</h2>
+          <p>
+            hi, my name is aj! i am a fourth year computer science major at the
+            university of california, san diego. my experience revolves around
+            different types of software engineering and tech consulting,
+            including video game design, full stack development, applications of
+            LLMs, and large-scale error metrics. in my free time, i enjoy
+            working out, drinking different types of coffee, cooking, and going
+            on hikes.
+          </p>
+          <p>
+            i was born in india and lived there until the age of 8. after that,
+            i moved to dallas, tx, living there for 2 years. finally, i then
+            moved to the bay area, ca, and have been living there since then.
+          </p>
+          <p>
+            i only started going by
+            <abbr title="Akshat Jain">AJ</abbr> in college!
+          </p>
+          <div class="about-quote">
+            <p>here is a quote that i live by:</p>
+            <blockquote>
+              <p>
+                Live as if you were to die tomorrow. Learn as if you were to
+                live forever.
+              </p>
+              <p>- Mahama Gandhi</p>
+            </blockquote>
+            <cite
+              >quote source:
+              <a href="https://www.brainyquote.com/quotes/mahatma_gandhi_133995"
+                >Brainy Quote</a
+              ></cite
+            >
+          </div>
+        </div>
+
+        <!--pfp was shrunk using tinypng.com-->
+        <div class="about-image">
+          <picture>
+            <!--phone size-->
+            <source
+              media="(max-width: 767px)"
+              srcset="../images/pfp/pfp-small.png"
+            />
+            <!--bigger than phone size-->
+            <source
+              media="(min-width: 768px)"
+              srcset="../images/pfp/pfp-large.png"
+            />
+            <!--default image-->
+            <img
+              src="../images/pfp/pfp-large.jpg"
+              alt="Professional headshot of Akshat Jain"
+            />
+          </picture>
+          <cite>Photo taken by my friend.</cite>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <hr />
+      <p>
+        made with ☕️🦾 by <strong>akshat jain</strong> |
+        <a href="mailto:akshat30@gmail.com">akshat30@gmail.com</a> |
+        <a href="https://www.linkedin.com/in/akshatja1n/" target="_blank"
+          >linkedin</a
+        >
+      </p>
+      <p>&copy; 2025 akshat jain</p>
+    </footer>
+  </body>
+</html>
