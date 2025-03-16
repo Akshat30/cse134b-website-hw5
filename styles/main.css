@@ -21,28 +21,12 @@
   --background-color: #f8f9fa;
   --text-color: #222;
   --white-color: #000;
-  --hover-color: #dcdcdc;
+  --hover-color: #b9b9b9;
   --dropdown-bg: #e0e0e0;
-  --dropdown-hover: #9f9f9f;
+  --dropdown-hover: #b9b9b9;
   --card-background: #c9fdf0;
   --green-accent: color(srgb 0 0.5 0.7);
   --special-hyperlink: color-mix(in srgb, blue 60%, white 40%);
-}
-
-#theme-toggle {
-  background: var(--primary-color, blue);
-  cursor: pointer;
-  border: none;
-  border-radius: 0.25rem;
-  display: block;
-  padding: 1rem 1.25rem;
-}
-
-@media (max-width: 767px) {
-  #theme-toggle {
-    padding: 0.5rem 0.75rem;
-    font-size: small;
-  }
 }
 
 /* body, resetting margin, padding and setting colors/structure */
@@ -161,6 +145,29 @@ nav ul li ul li a {
 
 nav ul li ul li a:hover {
   background: var(--dropdown-hover, blue);
+}
+
+/* css for the theme toggle in the nav bar */
+#theme-toggle {
+  background: var(--primary-color, blue);
+  cursor: pointer;
+  border: none;
+  font-size: large;
+  border-radius: 0.25rem;
+  display: block;
+  padding: 1rem 1.25rem;
+  transition: background 0.5s ease;
+}
+
+@media (max-width: 767px) {
+  #theme-toggle {
+    padding: 0.5rem 0.75rem;
+    font-size: small;
+  }
+}
+
+#theme-toggle:hover {
+  background: var(--hover-color);
 }
 
 main {

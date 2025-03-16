@@ -59,7 +59,8 @@ class ProjectCard extends HTMLElement {
           width: 100%; 
           max-height: ; 
           object-fit: cover; 
-          border-radius: 0.5rem; 
+          border-radius: 0.5rem;
+          color: var(--text-color, black);
         }
 
         @media (max-width: 768px) {
