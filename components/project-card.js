@@ -1,4 +1,7 @@
 // my custom project-card for displaying my projects, based on my original hard coded elements in ../career/projects.html
+// https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements this resource was helpful
+
+// project card object
 class ProjectCard extends HTMLElement {
   constructor() {
     super();

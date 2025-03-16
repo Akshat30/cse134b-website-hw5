@@ -1,5 +1,4 @@
 /* css for projects.html */
-
 .project-section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -17,11 +16,6 @@
   border-radius: 0.75rem;
   word-wrap: break-word;
   overflow: hidden;
-}
-
-/* highlight a project that has an iframe preview inside it, by outlining the parent in green */
-.project-card:has(iframe) {
-  border: 0.1rem solid var(--green-accent);
 }
 
 .project-card h3 {
@@ -66,4 +60,36 @@
   iframe {
     width: 250px;
   }
+}
+
+/* for the load local/remote buttons */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* for the load local/remote buttons */
+button {
+  padding: 1rem 1.25rem;
+  font-family: 'Nunito Sans', sans-serif;
+  text-decoration: none;
+  font-size: large;
+  background: var(--primary-color, blue);
+  color: var(--white-color, white);
+  border-radius: 0.25rem;
+  border: none;
+  transition: background 0.5s ease;
+}
+
+button:hover {
+  background: var(--hover-color);
+}
+
+/* for the message stating that no projects were found */
+#no-projects-display {
+  display: block;
+  text-align: center;
+  margin: auto;
+  margin-top: 6rem;
 }

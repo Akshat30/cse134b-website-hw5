@@ -33,6 +33,9 @@
     />
 
     <script src="../components/project-card.js" defer></script>
+    <!-- to load in the project-card javascript -->
+    <script src="../components/project-loader.js"></script>
+    <!-- to load in the javascript that loads project cards from local storage or JSONBin-->
   </head>
   <script src="../theme.js" defer></script>
 
@@ -81,134 +84,36 @@
             as a software engineer.</em
           >
         </p>
-        <!--For the demo of the custom element, this information is hard coded.-->
-        <div class="project-section">
+
+        <!-- container to store buttons, so that the buttons can be centered -->
+        <div class="button-container">
+          <button id="load-local">load local</button>
+          <button id="load-remote">load remote</button>
+        </div>
+
+        <!--placed 2 placeholder project cards to show the functionality of the buttons above-->
+        <!--also used tinypng.com to reduce sizing of all the project images by 79%-->
+        <div class="project-section" id="project-section">
           <project-card
-            title="project 1: homespace housing platform"
-            image="../images/projects/homespace_project.png"
-            alt="Screenshot of the Homespace Housing project"
-            description="This project was developed with a few friends, and we had seeked
-              to solve the housing crisis that current college students at UCSD
-              face every year. It is a website that allows landlords in the San
-              Diego area to post listings for college students. It also has an
-              ID verification system to guarantee that only college students are
-              able to lease from this website."
-            technologies="Prisma, tRPC, MongoDB, AWS, Next.js (React)"
-            link="https://github.com/Akshat30/Homespace"
-            note="This project has been discontinued."
+            title="blank project"
+            image=""
+            alt="blank project image"
+            description="..."
+            technologies="..."
+            link="..."
+            note="..."
           >
           </project-card>
-          <article class="project-card">
-            <h3>project 1: homespace housing platform</h3>
-            <p>
-              This project was developed with a few friends, and we had seeked
-              to solve the housing crisis that current college students at UCSD
-              face every year. It is a website that allows landlords in the San
-              Diego area to post listings for college students. It also has an
-              ID verification system to guarantee that only college students are
-              able to lease from this website.
-            </p>
-            <p>
-              <strong>technologies used:</strong> Prisma, tRPC, MongoDB, AWS for
-              backend, and Next.js (React) for the front-end.
-            </p>
-            <p>
-              <a href="https://github.com/Akshat30/Homespace"
-                >project github.</a
-              >
-            </p>
-            <p><em>This project has been discontinued</em></p>
-          </article>
-
-          <article class="project-card">
-            <h3>project 2: pantrypal full stack application</h3>
-            <p>
-              This project was assembled as a Java app with a team of 5 using
-              Agile methologies to allow a given user to create LLM generated
-              recipes and images through voice input.
-            </p>
-            <p>
-              <strong>technologies used:</strong> MongoDB, GPT-3.5 API, Whisper
-              API, and Dall-E.
-            </p>
-            <p>
-              <a
-                href="https://github.com/ucsd-cse110-fa23/cse-110-project-team-12"
-                >project github.</a
-              >
-            </p>
-            <p><em>This website was built in CSE 110.</em></p>
-          </article>
-
-          <article class="project-card">
-            <h3>project 3: verum large language model text analysis</h3>
-            <p>
-              This project allows a given user to choose a famous political
-              speech, or input their own, and receive a detailed analysis of it.
-              This includes a general analysis, specific fact checking, an
-              unbiased summary, and more. It extracts the text from a given
-              article, uses the Google API to receive additional information,
-              summarizes the text, and uses OpenAI's LLM endpoints to receive an
-              analysis.
-            </p>
-            <p>
-              <strong>technologies used:</strong> NodeJS, Next.js, Google API,
-              OpenAI API, AWS
-            </p>
-            <p>
-              <a href="https://verum.vercel.app/">project website.</a>
-            </p>
-            <p>
-              <em
-                >this website was built as a part of a hackathon, and we won
-                second place!</em
-              >
-            </p>
-            <p>
-              here is a cool piece of code from this project:
-              <br />
-            </p>
-            <pre>
-<code>print("Enter the link to a transcript/article:")
-url = input()
-load_dotenv()
-extractor_api_key = os.getenv("EXTRACTOR_API_KEY")
-ex = Extractor(extractor_api_key)
-transcript = ex.getTranscript(url)</code>
-        </pre>
-            <p>
-              This code uses a third party extractor library to extract the text
-              from a given link article. This was the best free api we could
-              find for this hackathon project.
-            </p>
-          </article>
-          <article class="project-card">
-            <h3>project 4: spotify api playground</h3>
-            <p>
-              This project was built for fun, for me to be able to learn how to
-              use Next.js. It displays lots of information regarding my Spotify
-              profile! Or for any profile that signs in.
-            </p>
-            <p>
-              <strong>technologies used:</strong> NodeJS, Next.js, Google API,
-              OpenAI API, AWS
-            </p>
-            <p>
-              <a href="https://ajspotify.vercel.app/">project website.</a>
-            </p>
-            <p>
-              <em
-                >this project helped me get my job on campus during my third
-                year!</em
-              >
-            </p>
-            <p>iFrame Preview of the website:</p>
-            <iframe
-              src="https://ajspotify.vercel.app/"
-              width="400"
-              height="400"
-            ></iframe>
-          </article>
+          <project-card
+            title="blank project"
+            image=""
+            alt="blank project image"
+            description="..."
+            technologies="..."
+            link="..."
+            note="..."
+          >
+          </project-card>
         </div>
       </section>
     </main>
