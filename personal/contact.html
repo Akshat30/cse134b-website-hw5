@@ -70,7 +70,7 @@
     <main>
       <section>
         <h2>contact me!</h2>
-        <form action="https://httpbin.org/post" method="post">
+        <form action="/" method="post">
           <label for="name" class="required">name</label>
           <input
             type="text"
@@ -105,6 +105,7 @@
           document.addEventListener('DOMContentLoaded', function () {
             let formErrors = [];
             // find all the inputs from the DOM
+            const form = document.querySelector('form');
             const nameInput = document.getElementById('name');
             const emailInput = document.getElementById('email');
             const commentsInput = document.getElementById('comments');
@@ -189,6 +190,76 @@
 
               // add to the field and submit if the user submits
               formErrorsField.value = JSON.stringify(formErrors);
+            });
+
+            // for my JSONBin that collects form responses
+            CONTACT_FORM_API_URL =
+              'https://api.jsonbin.io/v3/b/67d774d18561e97a50ed5e92';
+            MASTER_KEY =
+              '$2a$10$Fal7pfgw.g7jQliyhlXkQO5nSq0bcTf7Z1sURFvsdtkuOIIo8Uxr.';
+
+            // this function is to get the contents from JSONBin so that the new entry can be added
+            async function fetchOldContactSubmissions() {
+              try {
+                // typical GET, with master key since JSONBin requires
+                const response = await fetch(CONTACT_FORM_API_URL, {
+                  method: 'GET',
+                  headers: {
+                    'X-Master-Key': MASTER_KEY,
+                  },
+                });
+
+                const responseData = await response.json();
+                return responseData.record;
+              } catch (e) {
+                console.error('error: ', e);
+                return [];
+              }
+            }
+
+            // this is there to send the data back to JSONBin if user submits
+            form.addEventListener('submit', async function (event) {
+              event.preventDefault(); // stop any other submit behavior
+
+              // format the data and put into object
+              const formDataSubmit = {
+                timestamp: new Date().toISOString(), // adding a formatted timestap so i can see when this form was sent
+                name: nameInput.value,
+                email: emailInput.value,
+                comments: commentsInput.value,
+                errors: formErrors,
+              };
+
+              try {
+                const updatedEntries = await fetchOldContactSubmissions(); // fetch the old submissions first
+                updatedEntries.push(formDataSubmit); // add the new data to the old entries
+
+                // send updated set of submissions back to JSONBinnnnnn using a PUT to overwrite
+                const response = await fetch(CONTACT_FORM_API_URL, {
+                  method: 'PUT',
+                  headers: {
+                    'Content-Type': 'application/json',
+                    'X-Master-Key': MASTER_KEY,
+                  },
+                  body: JSON.stringify(updatedEntries),
+                });
+
+                // let user know if submitted correctly
+                if (response.ok) {
+                  alert('🎉 submitted successfully!');
+
+                  // reset the form and char count!
+                  form.reset();
+                  infoNumOfChars.textContent =
+                    maxNumOfChars + ' characters remaining';
+                } else {
+                  // alert the user if it bad response
+                  alert('⚠️ form did not submit correctly, try again.');
+                }
+              } catch (error) {
+                console.error('error:', error);
+                alert('⚠️ form did not submit correctly, try again.'); // alert user if it failed
+              }
             });
           });
         </script>
