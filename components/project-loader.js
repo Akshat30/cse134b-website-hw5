@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const response = await fetch(JSONBIN_URL, {
         headers: {
           'X-Master-Key':
-            '$2a$10$Fal7pfgw.g7jQliyhlXkQO5nSq0bcTf7Z1sURFvsdtkuOIIo8Uxr.', // add key to .env as a potential enhancement in the future (or part 3)
+            '$2a$10$Fal7pfgw.g7jQliyhlXkQO5nSq0bcTf7Z1sURFvsdtkuOIIo8Uxr.', 
         },
       });
 
@@ -96,7 +96,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!remoteProjects) {
         noProjectsToDisplay('Remote JSONBin'); // if no projects, display alert and message
       } else {
-        // if there are projects, call addProjectCard for each project fetched from JSONBin
+        // if there are projects
+        
+        localStorage.setItem('projects', JSON.stringify(remoteProjects)); // update local storage with what is pulled from remote (kind of like a cache)
+        //call addProjectCard for each project fetched from JSONBin
         remoteProjects.forEach(addProjectCard);
       }
     } catch (error) {
