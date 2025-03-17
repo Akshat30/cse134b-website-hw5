@@ -42,7 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function addProjectCard(project) {
     const card = document.createElement('project-card');
     card.setAttribute('title', project.title);
-    card.setAttribute('image', project.image);
+    card.setAttribute('small-img', project.smallImg);
+    card.setAttribute('big-img', project.bigImg);
     card.setAttribute('alt', project.alt);
     card.setAttribute('description', project.description);
     card.setAttribute('technologies', project.technologies);

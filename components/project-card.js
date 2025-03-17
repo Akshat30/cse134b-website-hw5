@@ -57,7 +57,6 @@ class ProjectCard extends HTMLElement {
 
         picture img {
           width: 100%; 
-          max-height: ; 
           object-fit: cover; 
           border-radius: 0.5rem;
           color: var(--text-color, black);
@@ -72,7 +71,9 @@ class ProjectCard extends HTMLElement {
 
       <article class="project-card">
         <picture>
-          <img src="" alt="">
+          <source media="(max-width: 767px)" srcset="" class="small-img" />
+          <source media="(min-width: 768px)" srcset="" class="big-img" />
+          <img src="" alt="" class="main-img" />
         </picture>
         <h3></h3>
         <p class="description"></p>
@@ -91,7 +92,8 @@ class ProjectCard extends HTMLElement {
   static get observedAttributes() {
     return [
       'title',
-      'image',
+      'small-img',
+      'big-img',
       'alt',
       'description',
       'technologies',
@@ -105,7 +107,9 @@ class ProjectCard extends HTMLElement {
     if (oldValue === newValue) return; // no need to change
 
     // fetching the elements by query for modification
-    const img = this.shadowRoot.querySelector('img');
+    const smallImg = this.shadowRoot.querySelector('.small-img');
+    const bigImg = this.shadowRoot.querySelector('.big-img');
+    const mainImg = this.shadowRoot.querySelector('.main-img');
     const h3 = this.shadowRoot.querySelector('h3');
     const description = this.shadowRoot.querySelector('.description');
     const technologies = this.shadowRoot.querySelector('.technologies');
@@ -114,9 +118,14 @@ class ProjectCard extends HTMLElement {
 
     // updating the necessary attribute based on which one was changed
     if (name === 'title') h3.textContent = newValue;
-    if (name === 'image') img.src = newValue;
-    if (name === 'alt')
-      img.alt = newValue || 'No description for this project image';
+    if (name === 'small-img') smallImg.srcset = newValue;
+    if (name === 'big-img') {
+      bigImg.srcset = newValue;
+      mainImg.src = newValue;
+    }
+    if (name === 'alt') {
+      mainImg.alt = newValue || 'no alt text for this image';
+    }
     if (name === 'description') description.textContent = newValue;
     if (name === 'technologies') technologies.textContent = newValue;
     if (name === 'link') {
